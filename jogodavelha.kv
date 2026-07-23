@@ -1,0 +1,193 @@
+#:import dp kivy.metrics.dp
+#:import sp kivy.metrics.sp
+
+<GameCell>:
+    font_size: sp(48)
+    bold: True
+    background_normal: ""
+    background_down: ""
+    border: 0, 0, 0, 0
+
+<ChoiceButton@Button>:
+    font_size: sp(14)
+    bold: True
+    background_normal: ""
+    background_down: ""
+    color: app.text_primary
+
+<ActionButton@Button>:
+    font_size: sp(15)
+    bold: True
+    background_normal: ""
+    background_down: ""
+    color: app.text_primary
+
+TicTacToeGame:
+    orientation: "vertical"
+    padding: dp(18), dp(18), dp(18), dp(12)
+    spacing: dp(12)
+
+    canvas.before:
+        Color:
+            rgba: app.background
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(58)
+        orientation: "vertical"
+
+        Label:
+            text: "JOGO DA VELHA"
+            color: app.text_primary
+            bold: True
+            font_size: sp(25)
+            halign: "center"
+            valign: "middle"
+            text_size: self.size
+
+        Label:
+            text: "Offline"
+            color: app.accent
+            font_size: sp(13)
+            halign: "center"
+            valign: "top"
+            text_size: self.size
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(42)
+        spacing: dp(8)
+
+        ChoiceButton:
+            text: "2 jogadores"
+            background_color: app.accent if root.mode == "two" else app.surface_light
+            on_release: root.set_mode("two")
+
+        ChoiceButton:
+            text: "Computador"
+            background_color: app.accent if root.mode == "cpu" else app.surface_light
+            on_release: root.set_mode("cpu")
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(38)
+        spacing: dp(8)
+        opacity: 1 if root.mode == "cpu" else 0.38
+        disabled: root.mode != "cpu"
+
+        Label:
+            text: "Dificuldade:"
+            color: app.text_secondary
+            font_size: sp(13)
+            halign: "left"
+            valign: "middle"
+            text_size: self.size
+            size_hint_x: 0.42
+
+        ChoiceButton:
+            text: "Fácil"
+            font_size: sp(13)
+            background_color: app.accent if root.difficulty == "easy" else app.surface_light
+            on_release: root.set_difficulty("easy")
+
+        ChoiceButton:
+            text: "Difícil"
+            font_size: sp(13)
+            background_color: app.accent if root.difficulty == "hard" else app.surface_light
+            on_release: root.set_difficulty("hard")
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(70)
+        padding: dp(8), dp(7)
+        spacing: dp(6)
+
+        canvas.before:
+            Color:
+                rgba: app.surface
+            RoundedRectangle:
+                pos: self.pos
+                size: self.size
+                radius: [dp(12)]
+
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "Você (X)" if root.mode == "cpu" else "Jogador X"
+                color: app.x_color
+                font_size: sp(12)
+            Label:
+                text: str(root.score_x)
+                color: app.text_primary
+                bold: True
+                font_size: sp(22)
+
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "Empates"
+                color: app.text_secondary
+                font_size: sp(12)
+            Label:
+                text: str(root.score_draw)
+                color: app.text_primary
+                bold: True
+                font_size: sp(22)
+
+        BoxLayout:
+            orientation: "vertical"
+            Label:
+                text: "CPU (O)" if root.mode == "cpu" else "Jogador O"
+                color: app.o_color
+                font_size: sp(12)
+            Label:
+                text: str(root.score_o)
+                color: app.text_primary
+                bold: True
+                font_size: sp(22)
+
+    Label:
+        size_hint_y: None
+        height: dp(39)
+        text: root.status_text
+        color: app.text_primary
+        font_size: sp(18)
+        bold: True
+        halign: "center"
+        valign: "middle"
+        text_size: self.size
+
+    GridLayout:
+        id: board_grid
+        cols: 3
+        rows: 3
+        spacing: dp(8)
+        size_hint_y: 1
+
+    BoxLayout:
+        size_hint_y: None
+        height: dp(48)
+        spacing: dp(8)
+
+        ActionButton:
+            text: "Nova partida"
+            background_color: app.accent
+            on_release: root.new_game()
+
+        ActionButton:
+            text: "Zerar placar"
+            background_color: app.surface_light
+            on_release: root.reset_scores()
+
+    Label:
+        size_hint_y: None
+        height: dp(20)
+        text: "100% offline • sem anúncios • sem cadastro"
+        color: app.text_secondary
+        font_size: sp(10)
+        halign: "center"
+        valign: "middle"
+        text_size: self.size

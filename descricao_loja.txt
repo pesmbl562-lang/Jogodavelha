@@ -1,0 +1,31 @@
+NOME DO APLICATIVO
+Jogo da Velha Offline
+
+DESCRIÇÃO CURTA
+Jogue sozinho ou com outra pessoa, sem internet e sem anúncios.
+
+DESCRIÇÃO COMPLETA
+Divirta-se com o clássico Jogo da Velha em qualquer lugar.
+
+Escolha entre jogar com outra pessoa no mesmo aparelho ou enfrentar o computador.
+No modo contra o computador, você pode selecionar a dificuldade fácil ou difícil.
+
+Principais recursos:
+• funciona totalmente offline;
+• modo para dois jogadores;
+• modo contra o computador;
+• dificuldade fácil e difícil;
+• placar salvo no aparelho;
+• interface simples e confortável;
+• sem anúncios;
+• sem cadastro;
+• sem coleta de dados.
+
+Uma opção leve e prática para partidas rápidas com amigos ou para treinar contra
+um adversário automático.
+
+CATEGORIA SUGERIDA
+Jogos > Tabuleiro
+
+TAGS SUGERIDAS
+jogo da velha, offline, tabuleiro, passatempo, dois jogadores

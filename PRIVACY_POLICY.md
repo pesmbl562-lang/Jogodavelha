@@ -1,0 +1,26 @@
+# Política de Privacidade — Jogo da Velha Offline
+
+Última atualização: 22 de julho de 2026.
+
+O aplicativo **Jogo da Velha Offline** não coleta, armazena, transmite, vende
+nem compartilha dados pessoais dos usuários.
+
+O aplicativo funciona sem conexão com a internet e não exige cadastro.
+
+O placar das partidas é salvo apenas no armazenamento interno do próprio aparelho.
+Essa informação não é enviada ao desenvolvedor nem a terceiros e pode ser apagada
+pelo usuário ao limpar os dados do aplicativo ou desinstalá-lo.
+
+O aplicativo não utiliza:
+- localização;
+- câmera;
+- microfone;
+- contatos;
+- identificadores de publicidade;
+- análise de uso;
+- anúncios;
+- compras no aplicativo;
+- serviços de terceiros que coletem dados.
+
+Para dúvidas sobre esta política, substitua este parágrafo por um e-mail público
+de contato do desenvolvedor antes da publicação.
